@@ -47,14 +47,15 @@ Pliki w repo
 # W celu zweryfikowania działania polityki sieciowej uruchomiłem dwa pody testowe:
 - test-frontend z etykietą app=frontend`
 - test-backend z etykietą app=backend.
-Następnie z każdego poda wykonałem test połączenia TCP do usługi svc-mysql na porcie 3306, używając polecenia:
-- `kubectl exec -it test-frontend -- nc -zvw2 svc-mysql 3306`
-- `kubectl exec -it test-backend  -- nc -zvw2 svc-mysql 3306`
+Następnie z każdego poda wykonałem test połączenia TCP do usługi svc-mysql na porcie 3306, używając poleceń:
+  `kubectl exec -it test-frontend -- nc -zvw2 svc-mysql 3306`
+  `kubectl exec -it test-backend  -- nc -zvw2 svc-mysql 3306`
 Wyniki:
 - z poda test-frontend połączenie zostało zablokowane - nc zakończył się komunikatem o przekroczeniu czasu („timed out”)
 - z poda test-backend połączenie zostało zestawione poprawnie – nc zwrócił komunikat succeeded
 
 # [Potwierdzenie działania na zdjęciach 1.png-9.png w folderze "zrzuty ekranu"]
+
 
 
 
