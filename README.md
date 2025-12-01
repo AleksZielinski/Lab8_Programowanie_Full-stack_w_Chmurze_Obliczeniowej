@@ -24,26 +24,27 @@ Pliki w repo
 - `09-test-backend.yaml` – Pod testowy (etykieta `app=backend`) do sprawdzenia dostępu
 
 # 1) Start klastra (Calico + 4 nody: master + A,B,C)
-minikube delete
-minikube start --driver=docker --container-runtime=docker --network-plugin=cni --cni=calico --nodes=4
+- `minikube delete`
+- `minikube start --driver=docker --container-runtime=docker --network-plugin=cni --cni=calico --nodes=4`
 
 # 2) Label węzłów A/B/C
-kubectl get nodes
-kubectl label node minikube-m02 lab8-role=A --overwrite
-kubectl label node minikube-m03 lab8-role=B --overwrite
-kubectl label node minikube-m04 lab8-role=C --overwrite
+- `kubectl get nodes`
+- `kubectl label node minikube-m02 lab8-role=A --overwrite`
+- `kubectl label node minikube-m03 lab8-role=B --overwrite`
+- `kubectl label node minikube-m04 lab8-role=C --overwrite`
 
 # 3) Wdrożenie zasobów
-kubectl apply -f 01-frontend-deploy.yaml
-kubectl apply -f 02-backend-deploy.yaml
-kubectl apply -f 03-mysql-pod.yaml
-kubectl apply -f 04-frontend-svc-nodeport.yaml
-kubectl apply -f 05-backend-svc-clusterip.yaml
-kubectl apply -f 06-mysql-svc-clusterip.yaml
-kubectl apply -f 07-netpol-mysql.yaml
-kubectl apply -f 08-test-frontend.yaml
-kubectl apply -f 09-test-backend.yaml
+- `kubectl apply -f 01-frontend-deploy.yaml`
+- `kubectl apply -f 02-backend-deploy.yaml`
+- `kubectl apply -f 03-mysql-pod.yaml`
+- `kubectl apply -f 04-frontend-svc-nodeport.yaml`
+- `kubectl apply -f 05-backend-svc-clusterip.yaml`
+- `kubectl apply -f 06-mysql-svc-clusterip.yaml`
+- `kubectl apply -f 07-netpol-mysql.yaml`
+- `kubectl apply -f 08-test-frontend.yaml`
+- `kubectl apply -f 09-test-backend.yaml`
 
 # [Potwierdzenie działania na zdjęciach 1.png-9.png w folderze "zrzuty ekranu"]
+
 
 
